@@ -8,22 +8,21 @@ fn chop<T: Ord>(item : T, slice : &[T]) -> i32 {
         return -1;
     }
 
-    let mut high = length - 1;
+    let mut width = length;
     let mut low = 0;
 
-    while low <= high {
-        let mid_index = (high - low) / 2 + low;
+    while width > 0 {
+        let mid_index = low + (width / 2);
         let comparison = item.cmp(&slice[mid_index]);
         match comparison {
-            Less => {
-                if high == 0 {
-                    return -1;
-                }
-                high = mid_index - 1
+            Less => (),
+            Greater => {
+                low = mid_index + 1;
+                width -= 1;
             }
-            Greater => low = mid_index + 1,
             Equal => return mid_index as i32
         }
+        width /= 2;
     }
     return -1;
 }
