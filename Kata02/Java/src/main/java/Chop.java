@@ -1,3 +1,3 @@
 public interface Chop<T> {
-  int chop(Comparable<T>[] array, T item);
+  int chop(T item, Comparable<T>[] array);
 }
