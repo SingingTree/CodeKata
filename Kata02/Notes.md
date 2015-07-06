@@ -32,3 +32,17 @@ I started the Haskell code second. I aspire to program things in Haskell, and ev
 * Had an off by one error when detecting far end cases in even length arrays due to integer divison. Needed to change how the width was calculated for both greater than and less than cases. Unit tests helped me catch this one too (had to figure out how to use HUnit, though).
 
 ### Thoughts
+
+* Lots of fighting with Haskell, but good to learn.
+* It's type system is totally rad, and monads are powerful (though my code here scarcely scratches the surface).
+* I'm not sure how I should be structuring my Haskell code, and feel like I may be losing style points.
+
+## Java
+
+I spend my works days coding Java, but figured this would be a good one to talk to me colleagues about. Also a chance to shake out some cobwebs in areas I don't hit in my day to day. Finally, I decided to try out using Gradle, which I haven't done much with before.
+
+I decided to do both a recursive and iterative solution, with the recursive first. I figure these are the same as the above two solutions, in how I think about them, but the language is different enough to make it a little exciting.
+
+### Issues
+
+* After having drilled the code from the previous two I didn't seem to make any mistakes. The integer division is not wildly intuitive to me mind. I need to sit down occasionally and think about the ramifications of integer division for certain cases, but no big thing.
