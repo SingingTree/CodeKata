@@ -39,10 +39,16 @@ I started the Haskell code second. I aspire to program things in Haskell, and ev
 
 ## Java
 
-I spend my works days coding Java, but figured this would be a good one to talk to me colleagues about. Also a chance to shake out some cobwebs in areas I don't hit in my day to day. Finally, I decided to try out using Gradle, which I haven't done much with before.
+I spend my works days coding Java, but figured this would be a good one to talk to me colleagues about. Also a chance to shake out some cobwebs in areas I don't hit in my day to day. I decided to try out using Gradle, which I haven't done much with before.
 
 I decided to do both a recursive and iterative solution, with the recursive first. I figure these are the same as the above two solutions, in how I think about them, but the language is different enough to make it a little exciting.
 
 ### Issues
 
 * After having drilled the code from the previous two I didn't seem to make any mistakes. The integer division is not wildly intuitive to me mind. I need to sit down occasionally and think about the ramifications of integer division for certain cases, but no big thing.
+
+### Thoughts
+
+* Gradle seems all right. Another make tool, with cool bits (no XML, plays nice with Maven and ivy) and not cool bits (I get to learn another set of syntax to script a build tool, language specific).
+* Generics in Java are less fun than their counterparts in Rust and Haskell. Having them attached to a class instead of simply being able to attach them to a method is cumbersome. And I know 'object oriented design blah blah' and that there are implementation factors in Java, but from a purely how do I like to code these things perspective, I like it less.
+* Parametrized JUnit tests seem rad, if not syntactically a little unintuitive to me.
