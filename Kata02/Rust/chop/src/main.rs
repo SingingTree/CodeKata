@@ -32,7 +32,7 @@ fn main() {
 }
 
 #[test]
-fn test() {
+fn test_chop() {
     assert_eq!(-1, chop(3, &[]));
     assert_eq!(-1, chop(3, &[1]));
     assert_eq!(0,  chop(1, &[1]));
