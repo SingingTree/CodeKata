@@ -52,3 +52,7 @@ I decided to do both a recursive and iterative solution, with the recursive firs
 * Gradle seems all right. Another make tool, with cool bits (no XML, plays nice with Maven and ivy) and not cool bits (I get to learn another set of syntax to script a build tool, language specific).
 * Generics in Java are less fun than their counterparts in Rust and Haskell. Having them attached to a class instead of simply being able to attach them to a method is cumbersome. And I know 'object oriented design blah blah' and that there are implementation factors in Java, but from a purely how do I like to code these things perspective, I like it less.
 * Parametrized JUnit tests seem rad, if not syntactically a little unintuitive to me.
+
+## Ruby
+
+I learned ruby years and years ago. I want to get back into it a bit, so I figured I'd try here.
