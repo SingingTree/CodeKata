@@ -3,7 +3,7 @@ object Chop {
     println("Chop!")
   }
 
-  def chop[A <: Ordered[A]](item : A, seq : Seq[A]) : Int = {
+  def chop[A <% Ordered[A]](item : A, seq : Seq[A]) : Int = {
     if(seq.nonEmpty) {
       val midIndex = seq.length / 2
       if(seq.apply(midIndex) > item) {
@@ -18,3 +18,4 @@ object Chop {
     }
   }
 }
+
