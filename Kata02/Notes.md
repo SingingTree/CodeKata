@@ -56,3 +56,22 @@ I decided to do both a recursive and iterative solution, with the recursive firs
 ## Ruby
 
 I learned ruby years and years ago. I want to get back into it a bit, so I figured I'd try here.
+
+### Issues
+
+* Having to relearn bits and bobs from ruby
+* Not super sure about the style, but think I've come up with something approximating an appropriate directory layout
+
+### Thoughts
+
+* Not sure how I feel about all the tooling, but I think RSpec is really rad. After having done some BDD stuff in other languages, I find RSpec much quicker to just get stuff done
+
+## Scala
+
+Scala! I'd done some Scala in the past, it has a lot of rad things, and a few things I don't like. But all in all I think Scala is pretty cool and I can just choose not to use the gross bits for the most part. Even then it feels like I have everything and a few kitchen sinks at times. Anywho, I wanted to brush up. I also wanted to try and play around with sbt again.
+
+### Issues
+
+* Sbt feels way more clunky than I want. Really long times to download deps to build simple programs (admittedly it's a one off). [Incompatibility between Scala versions](http://stackoverflow.com/questions/24103043/why-does-sbt-give-cant-expand-macros-compiled-by-previous-versions-of-scala-f). The documentation for the latest version of sbt (0.13 as of writing) details using an incompatible version of scala: ```scalaVersion := "2.11.4"```
+
+### Thoughts

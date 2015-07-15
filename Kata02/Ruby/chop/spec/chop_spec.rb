@@ -5,7 +5,7 @@ describe Chop do
     expect(Chop::VERSION).not_to be nil
   end
 
-  it 'chops empty array' do
+  it 'chops an empty array' do
     expect(Chop::chop(3, [])).to eq(-1)
   end
 
