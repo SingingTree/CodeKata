@@ -73,5 +73,9 @@ Scala! I'd done some Scala in the past, it has a lot of rad things, and a few th
 ### Issues
 
 * Sbt feels way more clunky than I want. Really long times to download deps to build simple programs (admittedly it's a one off). [Incompatibility between Scala versions](http://stackoverflow.com/questions/24103043/why-does-sbt-give-cant-expand-macros-compiled-by-previous-versions-of-scala-f). The documentation for the latest version of sbt (0.13 as of writing) details using an incompatible version of scala: ```scalaVersion := "2.11.4"```
+* Returning to Scala it's hard to keep up with language changes. I implemented my solution using view bounds. I ended up with a swag of google results suggesting these when I was dealing with typing issues in my solution. Indeed, even the official docs in places detail view bounds [without noting their deprecation](http://docs.scala-lang.org/tutorials/FAQ/context-and-view-bounds.html).  However, after completing my solution it came to my attention that these are deprecated.
 
 ### Thoughts
+
+* I remeber Scala fondly, but I feel I've lost some of that gloss. The way Rust and Haskell implement types seems to much more concisely achieve what Scala does and involved much less pain on my behalf.
+* Having everything and the kitchen sink is fantastic in terms of flexibility, but I fear in some cases it requires more work to have everything play nice together (classes and traits, in this case).
