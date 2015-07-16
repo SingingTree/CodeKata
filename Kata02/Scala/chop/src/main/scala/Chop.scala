@@ -3,7 +3,7 @@ object Chop {
     println("Chop!")
   }
 
-  def chop[A <% Ordered[A]](item : A, seq : Seq[A], indexOffset : Int = 0) : Int = {
+  def chop[T](item : T, seq : Seq[T], indexOffset : Int = 0)(implicit f : T => Ordered[T]) : Int = {
     if(seq.nonEmpty) {
       val midIndex = seq.length / 2
       if(seq.apply(midIndex) > item) {
