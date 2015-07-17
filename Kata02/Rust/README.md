@@ -6,8 +6,12 @@ This project uses [cargo](https://crates.io/).
 
 ## Building
 
-```cargo build```
+```
+cargo build
+```
 
 ## Testing
 
-```cargo test```
+```
+cargo test
+```
