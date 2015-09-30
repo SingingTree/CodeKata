@@ -1,0 +1,4 @@
+[package]
+name = "weather"
+version = "0.1.0"
+authors = ["Bryce Van Dyk <bryce@vandyk.net.nz>"]
