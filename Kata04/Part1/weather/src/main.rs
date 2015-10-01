@@ -22,6 +22,40 @@ fn read_file(file_name : &str) -> String {
     }
 }
 
+fn parse_table(table : &str) -> Vec<(i32, i32, i32)> {
+    let table_lines = table.lines_any();
+    let mut parsed_table = Vec::new();
+    
+    // Skip table header, then ignore any lines that have issues with parsing
+    for line in table_lines.skip(2) {
+        let mut words = line.split_whitespace();
+        let day = match words.next() {
+            Some(num) => match num.parse::<i32>() {
+                Ok(num) => num,
+                Err(_) => continue,
+            },
+            None => continue
+        };
+        let max_temp = match words.next() {
+            Some(num) => match num.trim_matches('*').parse::<i32>() {
+                Ok(num) => num,
+                Err(_) => continue,
+            },
+            None => continue
+        };
+        let min_temp = match words.next() {
+            Some(num) => match num.trim_matches('*').parse::<i32>() {
+                Ok(num) => num,
+                Err(_) => continue,
+            },
+            None => continue
+        };
+        parsed_table.push((day, max_temp, min_temp));
+    }
+    parsed_table
+}
+
 fn main() {
-    read_file("weather.dat");
+    let table_string = read_file("weather.dat");
+    parse_table(&table_string);
 }
