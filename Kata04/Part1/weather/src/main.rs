@@ -29,7 +29,6 @@ fn parse_table(table : &str) -> Vec<(i32, i32, i32)> {
     // Skip table header, then ignore any lines that have issues with parsing
     for line in table_lines.skip(2) {
         let mut words = line.split_whitespace();
-        print!("Words count {}", words.count());
         let day = match words.next() {
             Some(num) => match num.parse::<i32>() {
                 Ok(num) => num,
