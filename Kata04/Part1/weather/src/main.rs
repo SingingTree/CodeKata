@@ -61,5 +61,5 @@ fn main() {
     // Sort vector by spread -- smallest to greatest
     parsed_table.sort_by(|&(_, a_max, a_min), &(_, b_max, b_min)| (a_max - a_min).cmp(&(b_max - b_min)));
     // Print day with smallest spread
-    print!("{}", parsed_table[0].0);
+    println!("{}", parsed_table[0].0);
 }

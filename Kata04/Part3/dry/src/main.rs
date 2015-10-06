@@ -22,7 +22,7 @@ fn read_file(file_name : &str) -> String {
     }
 }
 
-fn parse_table(table : &str, team_name_col : usize, col1 : usize, col2 : usize) -> Vec<(String, i32, i32)> {
+fn parse_table(table : &str, team_name_col : usize, col1 : usize, col2 : usize, trim_characters : &[char]) -> Vec<(String, i32, i32)> {
     let table_lines = table.lines_any();
     let mut parsed_table = Vec::new();
     
@@ -34,14 +34,14 @@ fn parse_table(table : &str, team_name_col : usize, col1 : usize, col2 : usize) 
             None => continue
         };
         let goals_for = match words.get(col1) {
-            Some(num) => match num.parse::<i32>() {
+            Some(num) => match num.trim_matches(trim_characters).parse::<i32>() {
                 Ok(num) => num,
                 Err(_) => continue,
             },
             None => continue
         };
         let goals_against = match words.get(col2) {
-            Some(num) => match num.parse::<i32>() {
+            Some(num) => match num.trim_matches(trim_characters).parse::<i32>() {
                 Ok(num) => num,
                 Err(_) => continue,
             },
@@ -52,11 +52,25 @@ fn parse_table(table : &str, team_name_col : usize, col1 : usize, col2 : usize) 
     parsed_table
 }
 
-fn main() {
-	let table_string = read_file("football.dat");
-    let mut parsed_table = parse_table(&table_string, 1, 6, 8);
+fn weather() {
+    let table_string = read_file("weather.dat");
+    let mut parsed_table = parse_table(&table_string, 0, 1, 2, &['*']);
+    // Sort vector by spread -- smallest to greatest
+    parsed_table.sort_by(|&(_, a_max, a_min), &(_, b_max, b_min)| (a_max - a_min).cmp(&(b_max - b_min)));
+    // Print day with smallest spread
+    println!("{}", parsed_table[0].0);
+}
+
+fn football() {
+    let table_string = read_file("football.dat");
+    let mut parsed_table = parse_table(&table_string, 1, 6, 8, &[]);
     // Sort vector by spread -- smallest to greatest
     parsed_table.sort_by(|&(_, a_for, a_against), &(_, b_for, b_against)| ((a_for - a_against).abs()).cmp(&(b_for - b_against).abs()));
     // Print day with smallest spread
     println!("{}", parsed_table[0].0);
+}
+
+fn main() {
+    weather();
+    football();
 }
