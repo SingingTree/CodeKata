@@ -5,3 +5,4 @@ authors = ["Bryce Van Dyk <bryce@vandyk.net.nz>"]
 
 [dependencies]
 rust-crypto = "^0.2"
+bit-vec = "^0.4.2"
