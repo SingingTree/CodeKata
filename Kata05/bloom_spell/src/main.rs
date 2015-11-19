@@ -26,7 +26,14 @@ fn bloom_hash(hash : &[u8], bit_vec : &mut BitVec) {
 	// Cut the hash into 4 chunks, then use them to index into the bit vec to bloom
 	let chunk_size = hash.len() / 4;
 	let mut hash_iter = hash.iter();
-	for i in 0..3 {
+
+	for _ in 0..3 {
+		let mut bit_vec_index : usize = 0;
+		for _ in 0..chunk_size {
+			bit_vec_index += (*hash_iter.next().unwrap()) as usize;
+		}
+		bit_vec_index = bit_vec_index % BIT_VEC_SIZE;
+		bit_vec.set(bit_vec_index, true);
 	}
 }
 
