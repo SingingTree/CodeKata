@@ -59,8 +59,8 @@ fn bloom_hash(hash : &[u8], bit_vec : &mut BitVec) {
 
 	for _ in 0..3 {
 		let mut bit_vec_index : usize = 0;
-		for _ in 0..chunk_size {
-			bit_vec_index += (*hash_iter.next().unwrap()) as usize;
+		for i in 0..chunk_size {
+			bit_vec_index += ((*hash_iter.next().unwrap()) as usize) << (8 * i);
 		}
 		bit_vec_index = bit_vec_index % BIT_VEC_SIZE;
 		bit_vec.set(bit_vec_index, true);
@@ -80,8 +80,8 @@ fn check_hash(hash : &[u8], bit_vec : &BitVec) -> bool {
 
 	for _ in 0..3 {
 		let mut bit_vec_index : usize = 0;
-		for _ in 0..chunk_size {
-			bit_vec_index += (*hash_iter.next().unwrap()) as usize;
+		for i in 0..chunk_size {
+			bit_vec_index += ((*hash_iter.next().unwrap()) as usize) << (8 * i);
 		}
 		bit_vec_index = bit_vec_index % BIT_VEC_SIZE;
 		if bit_vec[bit_vec_index] == false {
