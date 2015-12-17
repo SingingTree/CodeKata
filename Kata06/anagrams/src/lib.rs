@@ -26,3 +26,14 @@ fn get_sorted_chars_works() {
     let sorted = get_sorted_chars(string);
     assert_eq!(sorted, "aefflsw");
 }
+
+#[test]
+fn get_anagrams_works_on_simple_data() {
+    let strings = ["ate", "eat"];
+    let mut expected_anagrams = Vec::new();
+    expected_anagrams.push("ate");
+    expected_anagrams.push("eat");
+    let anagram_map = get_anagrams(&strings);
+    assert_eq!(anagram_map.keys().len(), 1);
+    assert_eq!(anagram_map["aet"], expected_anagrams);
+}
