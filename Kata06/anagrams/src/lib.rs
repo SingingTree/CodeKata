@@ -1,6 +1,6 @@
 use std::collections::HashMap;
 
-fn get_sorted_chars(string : &str) -> String {
+pub fn get_sorted_chars(string : &str) -> String {
     let mut chars : Vec<char> = string.chars().collect();
     chars.sort();
     let mut sorted_string = String::new();
