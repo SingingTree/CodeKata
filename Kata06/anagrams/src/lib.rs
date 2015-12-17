@@ -1,26 +1,28 @@
 use std::collections::HashMap;
-use std::error::Error;
-use std::io::prelude::*;
-use std::fs::File;
-use std::path::Path;
 
-fn get_char_freqs(string : &str) -> HashMap<char, usize> {
-    let mut freqs = HashMap::new();
-    for c in string.chars() {
-        let counter = freqs.entry(c).or_insert(0);
-        *counter += 1;
+fn get_sorted_chars(string : &str) -> String {
+    let mut chars : Vec<char> = string.chars().collect();
+    chars.sort();
+    let mut sorted_string = String::new();
+    for c in chars {
+        sorted_string.push(c);
     }
-    freqs
+    sorted_string
+}
+
+pub fn get_anagrams<'a>(strings : &[&'a str]) -> HashMap<String, Vec<&'a str>> {
+    let mut anagram_map = HashMap::new();
+    for string in strings {
+        let sorted_string = get_sorted_chars(string);
+        let string_vec = anagram_map.entry(sorted_string).or_insert(Vec::new());
+        string_vec.push(*string);
+    }
+    anagram_map
 }
 
 #[test]
-fn get_freqs_works() {
+fn get_sorted_chars_works() {
     let string = "waffles";
-    let freqs = get_char_freqs(string);
-    assert_eq!(freqs[&'w'], 1);
-    assert_eq!(freqs[&'a'], 1);
-    assert_eq!(freqs[&'f'], 2);
-    assert_eq!(freqs[&'l'], 1);
-    assert_eq!(freqs[&'e'], 1);
-    assert_eq!(freqs[&'s'], 1);
+    let sorted = get_sorted_chars(string);
+    assert_eq!(sorted, "aefflsw");
 }
