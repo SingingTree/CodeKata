@@ -76,8 +76,6 @@ fn check_hash(hash : &[u8], bit_vec : &BitVec) -> bool {
 	let chunk_size = hash.len() / 4;
 	let mut hash_iter = hash.iter();
 
-	let mut word_seen = true;
-
 	for _ in 0..3 {
 		let mut bit_vec_index : usize = 0;
 		for i in 0..chunk_size {
@@ -85,11 +83,11 @@ fn check_hash(hash : &[u8], bit_vec : &BitVec) -> bool {
 		}
 		bit_vec_index = bit_vec_index % BIT_VEC_SIZE;
 		if bit_vec[bit_vec_index] == false {
-			word_seen = false;
+			return false
 		}
 	}
 
-	word_seen
+	true
 }
 
 fn check_spelling<D : Digest>(word : &String, digest : &mut D, bit_vec : &BitVec) -> bool {
